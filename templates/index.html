@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Chatbot</title>
+</head>
+<body>
+    <div class="container">
+        <div class="chat-window">
+            <form method="POST">
+                <label for="user_input">Enter text:</label><br>
+                <textarea id="user_input" name="user_input">{{ user_input }}</textarea><br>
+                <input class="submit-btn" type="submit" name="ask_chatbot" value="Ask my ChatBot">
+                <!-- This is the new button to ask ChatGPT -->
+                <input class="submit-btn ask-chatgpt-btn" type="submit" name="ask_chatgpt" value="Ask ChatGPT">
+            </form>
+            {% if response %}
+                <div class="response">
+                    <p><strong>Response:</strong></p>
+                    <p>{{ response }}</p>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
