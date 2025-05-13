@@ -6,7 +6,7 @@ import openai
 
 app = Flask(__name__)
 
-API_KEY = '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'
+API_KEY = 'sk-your-api-key-here'
 DIRECTORY_PATH = "/Users/sap156/Documents/MyPython/MyNotebook/MyChatGPT/MyData"
 model_name="gpt-3.5-turbo-16k"
 chat = ChatOpenAI(openai_api_key=API_KEY)
